@@ -22,14 +22,14 @@ app.post('/api/next-question', async (req, res) => {
   const { history, questions } = req.body;
 
   const prompt = `
-あなたは恋愛タイプ診断のアシスタントです。
+あなたは恋愛タイプ診断のAIアシスタントです。
 これまでのユーザーの回答履歴は以下の通りです：
 ${history.join('\n')}
 
 次の質問として、以下の選択肢の中から最適な質問を1つ選んで、その質問をそのまま返してください。
 ${questions.map((q, idx) => `${idx + 1}. ${q}`).join('\n')}
 
-選んだ質問だけを返してください。
+選んだ質問だけを返してくださいね。
 `;
 
   try {
